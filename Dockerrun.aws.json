@@ -1,0 +1,36 @@
+{
+    "AWSDockerrunVersion":2,
+    "containerDefinitions": [
+        {
+            "name":"client",
+            "image": "avatarnice/multi-client",
+            "hostname": "client",
+            "essential": false   
+        },
+        {
+            "name":"server",
+            "image": "avatarnice/multi-server",
+            "hostname": "api",
+            "essential": false   
+        },
+        {
+            "name":"worker",
+            "image": "avatarnice/multi-worker",
+            "hostname": "worker",
+            "essential": false   
+        },
+        {
+            "name":"nginx",
+            "image":"avatarnice/multi-nginx",
+            "hostname":"nginx",
+            "essential": true,
+            "portMappings":[
+                {
+                    "hostPort":80,
+                    "containerPort":80
+                }
+            ],
+            "link":["client", "server"]
+        }
+    ]
+}
