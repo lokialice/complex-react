@@ -23,8 +23,8 @@ deploy:
     edge: true
     provider: elasticbeanstalk
     region: "us-east-2"
-    app: "multi-docker"
-    env: "MultiDocker-env-1"
+    app: "loki-multi-docker"
+    env: "LokiMultiDocker-env"
     bucket_name: "elasticbeanstalk-us-east-2-086203154370"
     bucket_path: "docker-multi"
     on:
